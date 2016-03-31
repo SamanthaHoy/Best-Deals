@@ -26,12 +26,13 @@ console.log(quantityAndPrice);
   function findAverage (quantityAndPrice) {
     for (var i = 0 ; i < quantityAndPrice.length ; i++) {
       average[i] = quantityAndPrice[i].price / quantityAndPrice[i].quantity; // to get the average per array element
+      average[i] = average[i].toFixed(2);
       console.log("deal:" + quantityAndPrice[i].deal + " average:" + average[i]);
     }
   }
 
   findAverage(quantityAndPrice) ;
-
+  console.log("averages array:" + average);
 
   // for (i in average) {
   //   console.log("deal:" + quantityAndPrice[i].deal + " average:" + average[i]);
@@ -42,15 +43,22 @@ console.log(quantityAndPrice);
     for (var i = 0 ; i < average.length ; i++) {
       for (var j =  1 ; j < average.length ; j++) {
         if (average[i] < average[j]) {
-          console.log("average[" + i + "] " + average[i] + "average[" + j + "]" + average[j]);
+          // console.log("the 1st element is < the 2nd element");
+          // console.log("average[" + i + "] " + average[i] + "average[" + j + "]" + average[j]);
           cheapestAvo = average[i];
-          console.log("cheapest Avo = " + cheapestAvo )
+          // console.log("cheapest Avo = " + cheapestAvo )
+        }
+        else {
+          // console.log("the 2nd element is < the 1st element");
+          // console.log("average[" + i + "] " + average[i] + "average[" + j + "]" + average[j]);
+          cheapestAvo = average[i];
+          // console.log("cheapest Avo = " + cheapestAvo )
         }
       }
     }
   }
-
-console.log(cheapestAvo);
+findCheapest(average);
+console.log("The cheapest avo is " + cheapestAvo);
 
 //
 // var expensiveAvo = [];
