@@ -41,11 +41,7 @@ prodList.forEach(function(list){   // for each element of the array
 
   findAverage(quantityAndPrice) ;
   // console.log("averages array:" + average);
-//
-//   // for (i in average) {
-//   //   console.log("deal:" + quantityAndPrice[i].deal + " average:" + average[i]);
-//   // }
-//
+
   var cheapestAvo ;
   function findCheapest(average) {
     for (var i = 0 ; i < average.length ; i++) {
@@ -72,15 +68,12 @@ var expensiveAvo = 0;
 function findExpensive(average) {
   for (var i = 0 ; i < average.length ; i++) {
     if (average[i] > expensiveAvo) {
-      console.log("average[" + i + "] " + average[i] + "> " + "expensiveAvo :" + expensiveAvo);
+      console.log("This average [" + i + "] " + average[i] + "< expensiveAvo:" + expensiveAvo );
       expensiveAvo = average[i];
-      console.log("most expensive avo to date" + expensiveAvo);
-    }
-    // else {
-    //   console.log("average[" + i + "] " + average[i] + " < " + "expensiveAvo :" + expensiveAvo);
-    //   expensiveAvo = average[i];
-    //   console.log("most expensive avo to date" + expensiveAvo);
-    //  } // end else
+      }
+     else {
+         console.log("This average [" + i + "] " + average[i] + "< expensiveAvo:" + expensiveAvo );
+        } // end else
     } // end for
   } // end function
 
