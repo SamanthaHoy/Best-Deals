@@ -40,29 +40,20 @@ prodList.forEach(function(list){   // for each element of the array
   }
 
   findAverage(quantityAndPrice) ;
-  // console.log("averages array:" + average);
+  console.log("averages array:" + average);
 
-  var cheapestAvo ;
-  function findCheapest(average) {
-    for (var i = 0 ; i < average.length ; i++) {
-      for (var j =  1 ; j < average.length ; j++) {
-        if (average[i] < average[j]) {
-          // console.log("the 1st element is < the 2nd element");
-          // console.log("average[" + i + "] " + average[i] + "average[" + j + "]" + average[j]);
-          cheapestAvo = average[i];
-          // console.log("cheapest Avo = " + cheapestAvo )
-        }
-        else {
-          // console.log("the 2nd element is < the 1st element");
-          // console.log("average[" + i + "] " + average[i] + "average[" + j + "]" + average[j]);
-          cheapestAvo = average[j];
-          // console.log("cheapest Avo = " + cheapestAvo )
-        }
-      }
+var cheapestAvo= average[0];
+function findCheapest(average) {
+  for (var i = 0 ; i < average.length ; i++) {
+    if (average[i] < cheapestAvo) {
+      cheapestAvo = average[i];
+      console.log("cheapestAvo :" + "["+ i + "]"+ cheapestAvo);
     }
-  }
+  } // end for
+} //end function
+
 findCheapest(average);
-// console.log("The cheapest avo is " + cheapestAvo);
+console.log("The cheapest avo is " + cheapestAvo);
 
 var expensiveAvo = 0;
 function findExpensive(average) {
@@ -71,11 +62,25 @@ function findExpensive(average) {
       console.log("This average [" + i + "] " + average[i] + "< expensiveAvo:" + expensiveAvo );
       expensiveAvo = average[i];
       }
-     else {
-         console.log("This average [" + i + "] " + average[i] + "< expensiveAvo:" + expensiveAvo );
-        } // end else
-    } // end for
-  } // end function
+    //  else {
+    //      console.log("This average [" + i + "] " + average[i] + "< expensiveAvo:" + expensiveAvo );
+    //     } // end else
+  } // end for
+} // end function
 
 findExpensive(average);
 console.log("The most expensive avo is " + expensiveAvo);
+
+function findTotalAverage(quantityAndPrice){
+  var totalQuantity = 0;
+  var totalPrice = 0;
+  for (var i=0 ; i < quantityAndPrice.length ; i++){
+    totalQuantity = totalQuantity + Number(quantityAndPrice[i].quantity);
+    totalPrice = totalPrice + ( Number(quantityAndPrice[i].price));
+    console.log("i:" + i + " totalQuantity: " + totalQuantity + " totalPrice: " + totalPrice)
+  }
+  return totalPrice/totalQuantity;
+}
+
+var totalAvg = findTotalAverage(quantityAndPrice);
+console.log("The total average price for all avo's is :" + totalAvg.toFixed(2));
