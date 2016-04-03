@@ -24,8 +24,8 @@ prodList.forEach(function(list){   // for each element of the array
   // console.log(splitLine);
 // creates a map within an array , creates 2 keys , assigns values , converts them to numbers with 2 decimal places
   quantityAndPrice.push({
-    quantity: Number(splitLine[0]).toFixed(2) ,
-    price :Number(splitLine[1]).toFixed(2) }); // create an object with 2 keys - quantity and price with values
+    quantity: Number(splitLine[0]) ,
+    price :Number(splitLine[1]) }); // create an object with 2 keys - quantity and price with values
   });
 // console.log("-----")
 // console.log(quantityAndPrice);
